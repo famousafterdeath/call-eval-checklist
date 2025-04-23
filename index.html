@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Evaluation Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background: #f9f9f9;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    #refresh {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #counter {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .keyword-button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      font-size: 1rem;
+      text-align: left;
+      border: 1px solid #ccc;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .keyword-button.active {
+      background-color: #5cb85c;
+      color: white;
+      border-color: #4cae4c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Call Evaluation Keywords</h1>
+  <button id="refresh">Refresh Checklist</button>
+  <div id="counter">00 / 25 marked</div>
+  <div id="checklist">
+    <button class="keyword-button">Greeting</button>
+    <button class="keyword-button">Empathy</button>
+    <button class="keyword-button">Clarification</button>
+    <button class="keyword-button">Active Listening</button>
+    <button class="keyword-button">Positive Language</button>
+    <button class="keyword-button">Confidence</button>
+    <button class="keyword-button">Tone</button>
+    <button class="keyword-button">Resolution</button>
+    <button class="keyword-button">Apology</button>
+    <button class="keyword-button">Assurance</button>
+    <button class="keyword-button">Product Knowledge</button>
+    <button class="keyword-button">Call Summary</button>
+    <button class="keyword-button">Escalation</button>
+    <button class="keyword-button">Next Steps</button>
+    <button class="keyword-button">Verification</button>
+    <button class="keyword-button">Timeliness</button>
+    <button class="keyword-button">Solution Offered</button>
+    <button class="keyword-button">Empathetic Statement</button>
+    <button class="keyword-button">Follow-up</button>
+    <button class="keyword-button">Customer Name</button>
+    <button class="keyword-button">Correct Info</button>
+    <button class="keyword-button">Politeness</button>
+    <button class="keyword-button">Final Thank You</button>
+    <button class="keyword-button">Goodbye Phrase</button>
+    <button class="keyword-button">Call Control</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.keyword-button');
+    const refresh = document.getElementById('refresh');
+    const counter = document.getElementById('counter');
+
+    function updateCounter() {
+      const activeCount = document.querySelectorAll('.keyword-button.active').length;
+      counter.textContent = \`\${activeCount.toString().padStart(2, '0')} / 25 marked\`;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        updateCounter();
+      });
+    });
+
+    refresh.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      updateCounter();
+    });
+
+    updateCounter();
+  </script>
+</body>
+</html>
