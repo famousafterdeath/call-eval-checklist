@@ -20,7 +20,7 @@
       color: white;
       border: none;
       padding: 10px 15px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-bottom: 10px;
       cursor: pointer;
       border-radius: 5px;
@@ -28,17 +28,18 @@
     #counter {
       font-weight: bold;
       margin-bottom: 20px;
+      font-size: 1.1rem;
     }
     .keyword-button {
       display: block;
       width: 100%;
-      margin: 5px 0;
-      padding: 10px;
-      font-size: 1rem;
+      margin: 8px 0;
+      padding: 16px;
+      font-size: 1.2rem;
       text-align: left;
       border: 1px solid #ccc;
       background-color: white;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
@@ -88,7 +89,7 @@
 
     function updateCounter() {
       const activeCount = document.querySelectorAll('.keyword-button.active').length;
-      counter.textContent = \`\${activeCount.toString().padStart(2, '0')} / 25 marked\`;
+      counter.textContent = `${activeCount.toString().padStart(2, '0')} / 25 marked`;
     }
 
     buttons.forEach(btn => {
